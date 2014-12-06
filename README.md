@@ -1,5 +1,12 @@
 # Flattening node modules for use as single bundle
 
+**A new cli tool has been created to do this for you**: [`flattenify`](https://www.npmjs.org/package/flattenify)
+
+```
+$ npm install -g flattenify
+$ flattenify <module> --outfile <filename>
+```
+
 ## Setup
 
 ```
