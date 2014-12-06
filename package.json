@@ -1,0 +1,16 @@
+{
+  "name": "browserify-node-example",
+  "version": "0.0.0",
+  "description": "Example using Browserify to build a flattened module from depenancies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "./node_modules/.bin/browserify -e index.js -o bundle.js --standalone foo --bare"
+  },
+  "author": "Jess Telford <hi@jes.st>",
+  "license": "ISC",
+  "dependencies": {
+    "uniq": "~1.0.1",
+    "browserify": "~7.0.0"
+  }
+}
