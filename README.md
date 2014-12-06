@@ -1,4 +1,4 @@
-# Flattening NPM modules for use in node
+# Flattening node modules for use as single bundle
 
 ## Setup
 
@@ -28,3 +28,14 @@ $ node ./use-bundle.js
 ```
 
 Enjoy your flattened node module! :D
+
+## Explanation
+
+[Browserify](http://browserify.org) is a tool for walkind the dependency tree of
+your node project and combining all the files into a single runable bundle.
+
+Normally, this bundle would be run in a browser (hence the name), however, there
+is an option (`--standalone`) which will instruct browserify to insert a tiny
+shim that checks for existence of a module system. Since node comes with this
+module system built-in, a bundle that has this shim will seamlessly work in node
+by simply doing `var bundled = require('./bundle.js');`.
