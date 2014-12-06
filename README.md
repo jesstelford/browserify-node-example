@@ -39,3 +39,20 @@ is an option (`--standalone`) which will instruct browserify to insert a tiny
 shim that checks for existence of a module system. Since node comes with this
 module system built-in, a bundle that has this shim will seamlessly work in node
 by simply doing `var bundled = require('./bundle.js');`.
+
+### How
+
+This is done by running browserify like so:
+
+```
+./node_modules/.bin/browserify -e index.js -o bundle.js --standalone foo --bare
+```
+
+See the [browserify docs](https://github.com/substack/node-browserify#usage) for
+explanation of the individual options.
+
+Note that when using the bundle with node, the `foo` option to `--standalone` is
+never referenced or used, however browserify still requires it.
+
+The above command is what is executed when you run `npm run prepublish`, and can
+be seen in the `package.json` file.
